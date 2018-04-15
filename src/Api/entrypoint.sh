@@ -38,4 +38,6 @@ cron
 cp /etc/bitwarden/ca-certificates/*.crt /usr/local/share/ca-certificates/ \
     && update-ca-certificates
 
+ln -sf /usr/share/zoneinfo/$globalSettings__timezone /etc/localtime
+
 gosu bitwarden:bitwarden dotnet /app/Api.dll
